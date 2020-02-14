@@ -24,6 +24,14 @@ public class Notifier : MonoBehaviour
 	
     {
         notificationText.text  = "That's " + distance/420 + " 420's!";
+		Invoke("erase",1f);
+		
+
+	}
+	void erase()
+	
+    {
+        notificationText.text  = " ";
 
 	}
 	
