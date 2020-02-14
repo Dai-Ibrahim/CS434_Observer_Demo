@@ -8,9 +8,14 @@ public class Notifier : MonoBehaviour
     //Animator animator;
     // Start is called before the first frame update
 	public Text notificationText;
+	public Light myLight;
+	public Image myImage;
+	//myLight.enabled = false;
 
     void OnEnable()
     {
+		myLight.enabled = false;
+		myImage.enabled = false;
         Score.onBlazeIt += GiveMessage;
         //animator = GetComponent<Animator>();
     }
@@ -24,6 +29,10 @@ public class Notifier : MonoBehaviour
 	
     {
         notificationText.text  = "That's " + distance/420 + " 420's!";
+		myLight.enabled = true;
+		myImage.enabled = true;
+
+
 		Invoke("erase",1f);
 		
 
@@ -32,6 +41,9 @@ public class Notifier : MonoBehaviour
 	
     {
         notificationText.text  = " ";
+		myLight.enabled = false;
+		myImage.enabled = false;
+
 
 	}
 	
